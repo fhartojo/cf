@@ -1,0 +1,10 @@
+---
+applications:
+- name: cf
+  memory: 768M
+  instances: 1
+  cpu: 1
+  random-route: true
+  path: target/cf-0.0.1.war
+  buildpacks:
+  - https://github.com/cloudfoundry/java-buildpack.git
