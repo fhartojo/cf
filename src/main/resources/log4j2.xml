@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Appenders>
+		<Properties>
+			<Property name="LOG_PATTERN">%d{ISO8601}|%t|%p|%c.%M|%m %replace{%rException}{\n}{\u2028}%throwable{none} %n</Property>
+		</Properties>
+		<Console name="rootAppender" target="SYSTEM_OUT">
+			<PatternLayout>
+				<Pattern>[ROOT]|%d{ISO8601}|%t|%p|%c.%M|%m%n</Pattern>
+			</PatternLayout>
+		</Console>
+		<Console name="consoleAppender" target="SYSTEM_OUT">
+			<PatternLayout>
+				<Pattern>[LOG]|%d{ISO8601}|%t|%p|%c.%M|%m %replace{%rException}{\n}{\u2028}%throwable{none} %n</Pattern>
+			</PatternLayout>
+		</Console>
+	</Appenders>
+
+	<Loggers>
+		<Logger name="com.quiteharmless" level="DEBUG" additivity="false">
+			<AppenderRef ref="consoleAppender" />
+		</Logger>
+		<Logger name="org.springframework" level="INFO" additivity="false">
+			<AppenderRef ref="consoleAppender" />
+		</Logger>
+		<Root level="ERROR" additivity="false">
+			<AppenderRef ref="rootAppender" />
+		</Root>
+	</Loggers>
+</Configuration>
