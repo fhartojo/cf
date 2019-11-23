@@ -1,1 +1,1 @@
-web: java -jar cf-0.0.1.war
+web: java -jar target/cf-0.0.1.war
