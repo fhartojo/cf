@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
+	<Properties>
+		<Property name="LOG_PATTERN">[LOG]|%d{ISO8601}|%t|%p|%c.%M|%m %replace{%rException}{\n}{\u2028}%throwable{none} %n</Property>
+	</Properties>
 	<Appenders>
-		<Properties>
-			<Property name="LOG_PATTERN">%d{ISO8601}|%t|%p|%c.%M|%m %replace{%rException}{\n}{\u2028}%throwable{none} %n</Property>
-		</Properties>
 		<Console name="rootAppender" target="SYSTEM_OUT">
 			<PatternLayout>
 				<Pattern>[ROOT]|%d{ISO8601}|%t|%p|%c.%M|%m%n</Pattern>
@@ -11,7 +11,7 @@
 		</Console>
 		<Console name="consoleAppender" target="SYSTEM_OUT">
 			<PatternLayout>
-				<Pattern>[LOG]|%d{ISO8601}|%t|%p|%c.%M|%m %replace{%rException}{\n}{\u2028}%throwable{none} %n</Pattern>
+				<Pattern>${LOG_PATTERN}</Pattern>
 			</PatternLayout>
 		</Console>
 	</Appenders>
