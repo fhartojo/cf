@@ -1,7 +1,7 @@
 {
-  "buildpacks": [
-    {
-      "url": "heroku/java"
-    }
-  ]
+	"buildpacks": [
+		{
+			"url": "heroku/java"
+		}
+	]
 }
